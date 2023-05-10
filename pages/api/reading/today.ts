@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import path from 'path'
 import { promises as fs } from 'fs'
 
-type Data = {
+export type ReadingTodayType = {
   Date: string,
   "Old Testament": string,
   "New Testament": string
@@ -11,7 +11,7 @@ type Data = {
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<ReadingTodayType>
 ) {
 
   const months = ['January','February','March','April','May','June',
