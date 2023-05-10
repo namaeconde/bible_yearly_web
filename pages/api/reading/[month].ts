@@ -5,7 +5,7 @@ import { promises as fs } from 'fs'
 
 export default function handler(
     req: NextApiRequest,
-    res: NextApiResponse<Data>
+    res: NextApiResponse
 ) {
     const { month } = req.query;
     const jsonDirectory = path.join(process.cwd(), 'json');
