@@ -7,6 +7,7 @@ const robotoMono = Roboto_Mono({
   weight: '400',
   subsets: ['latin'],
 });
+const VERSION = "NCV";
 
 export default function Home() {
   const [readingToday, setReadingToday] = useState<ReadingTodayType>({
@@ -14,7 +15,6 @@ export default function Home() {
     "Old Testament": "",
     "New Testament": ""
   });
-
 
   useEffect(() => {
     fetch('/api/reading/today')
@@ -42,7 +42,7 @@ export default function Home() {
             New Testament: {readingToday["New Testament"]}
           </p>
           <a
-              href={`https://www.biblegateway.com/passage/?search=${readingToday["Old Testament"]},${readingToday["New Testament"]}&version=NIV`}
+              href={`https://www.biblegateway.com/passage/?search=${readingToday["Old Testament"]},${readingToday["New Testament"]}&version=${VERSION}`}
               className="group rounded-lg border border-transparent p-2 m-2 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
               target="_blank"
               rel="noopener noreferrer"
