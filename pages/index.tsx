@@ -32,7 +32,7 @@ export default function Home() {
           className={`flex min-h-screen py-24 ${robotoMono.className}`}
       >
         { isLoading ?
-          <div role="status" className="max-w-sm animate-pulse">
+          <div role="status" className="max-w-sm m-auto animate-pulse">
             <div className="h-5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
             <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"></div>
             <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
