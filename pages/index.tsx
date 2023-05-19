@@ -47,7 +47,7 @@ export default function Home() {
               after:from-sky-200 after:via-blue-200 after:blur-2xl
               after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent
               before:dark:to-blue-700/10 after:dark:from-sky-900
-              after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
+              after:dark:via-[#0141ff]/40">
             <h2 className={`mb-3 text-2xl font-bold`}>
               TODAY&apos;S READING
             </h2>
