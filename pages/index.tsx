@@ -65,12 +65,10 @@ export default function Home() {
                dark:border-neutral-700 dark:bg-neutral-800/30"
               target="_self"
               rel="noopener noreferrer">
-              <h2 className={`text-xl font-semibold opacity-70`}>
-                Go{' '}
-                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-              </h2>
+              <svg className="animate-bounce w-6 h-6 text-gray-900" fill="none" stroke-linecap="round"
+                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+              </svg>
             </a>
           </div>
         }
