@@ -65,7 +65,7 @@ export default function Home() {
                dark:border-neutral-700 dark:bg-neutral-800/30"
               target="_self"
               rel="noopener noreferrer">
-              <svg className="animate-bounce w-6 h-6 text-gray-900" fill="none" stroke-linecap="round"
+              <svg className="animate-bounce w-6 h-6 opacity-70" fill="none" stroke-linecap="round"
                  stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
               </svg>
