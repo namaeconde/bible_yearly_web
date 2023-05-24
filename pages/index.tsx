@@ -19,7 +19,7 @@ export function Loading() {
     )
 }
 
-export const fetcher = (...args: RequestInfo) => fetch(args).then(res => res.json())
+export const fetcher = (...args: any) => fetch(args).then(res => res.json())
 
 export function useReadingToday() {
     const { data, error, isLoading } = useSWR<ReadingTodayType>('/api/reading/today', fetcher)
@@ -38,9 +38,8 @@ export default function Home() {
       <main
           className={`flex min-h-screen py-24 ${robotoMono.className}`}
       >
-        { isLoading ?
-          <Loading /> :
-          <ReadingToday readingToday={readingToday} />
+        { isLoading ? <Loading /> :
+          <ReadingToday readingToday={readingToday as ReadingTodayType} />
         }
       </main>
   )

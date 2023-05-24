@@ -1,8 +1,10 @@
+import { ReadingTodayType } from "@/pages/api/reading/today";
+
 const VERSION = "NCV";
 
-export default function ReadingToday({readingToday}) {
+export default function ReadingToday({ readingToday }: { readingToday: ReadingTodayType }) {
     return (
-        <div
+        readingToday && <div
             className="grid m-auto text-center place-items-center
             before:rounded-full before:bg-gradient-radial
             before:blur-2xl before:content-[''] after:absolute after:-z-20
