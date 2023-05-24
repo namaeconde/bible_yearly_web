@@ -1,7 +1,7 @@
 import { Roboto_Mono } from 'next/font/google'
-import { useEffect, useState } from "react";
 import { ReadingTodayType } from "@/pages/api/reading/today";
 import ReadingToday from "./components/ReadingToday";
+import useSWR from "swr";
 
 const robotoMono = Roboto_Mono({
   weight: '400',
@@ -19,23 +19,20 @@ export function Loading() {
     )
 }
 
-export default function Home() {
-  const [isLoading, setLoading] = useState(false);
-  const [readingToday, setReadingToday] = useState<ReadingTodayType>({
-    Date: "",
-    "Old Testament": "",
-    "New Testament": ""
-  });
+export const fetcher = (...args: RequestInfo) => fetch(args).then(res => res.json())
 
-  useEffect(() => {
-    setLoading(true);
-    fetch('/api/reading/today')
-        .then((res) => res.json())
-        .then((data) => {
-          setReadingToday(data);
-          setLoading(false);
-        })
-  }, []);
+export function useReadingToday() {
+    const { data, error, isLoading } = useSWR<ReadingTodayType>('/api/reading/today', fetcher)
+
+    return {
+        readingToday: data,
+        isLoading,
+        isError: error
+    }
+}
+
+export default function Home() {
+  const { isLoading, readingToday } = useReadingToday()
 
   return (
       <main
