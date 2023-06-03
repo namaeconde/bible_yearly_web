@@ -16,7 +16,7 @@ export default function handler(
 
   const months = ['January','February','March','April','May','June',
     'July','August','September','October','November','December'];
-  const nowStr = new Date().toLocaleString("en-US", )
+  const nowStr = new Date().toLocaleString("en-US")
   const now = new Date(nowStr)
   const date = now.getDate();
   const month = months[now.getMonth()];
