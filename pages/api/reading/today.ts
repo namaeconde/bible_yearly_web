@@ -17,7 +17,7 @@ export default function handler(
 
   const months = ['January','February','March','April','May','June',
     'July','August','September','October','November','December'];
-  const clientTimezone = req.query["timezone"] ? req.query["timezone"] as String : "UTC"
+  const clientTimezone = req.query["timezone"] ? req.query["timezone"] as string : "UTC"
   const nowStr = new Date().toLocaleString("en-US", { timeZone: clientTimezone, dateStyle: "full" })
   const now = new Date(nowStr)
   const date = now.getDate();
