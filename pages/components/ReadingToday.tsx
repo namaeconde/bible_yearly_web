@@ -17,7 +17,7 @@ export default function ReadingToday({ readingToday }: { readingToday: ReadingTo
                 TODAY&apos;S READING
             </h2>
             <p className={`text-sm opacity-70`}>
-                Timezone: {Intl.DateTimeFormat().resolvedOptions().timeZone}
+                Timezone: {readingToday["Timezone"]}
             </p>
             <p className={`text-sm opacity-70`}>
                 Date: {readingToday["Date"]}

@@ -22,7 +22,8 @@ export function Loading() {
 export const fetcher = (...args: any) => fetch(args).then(res => res.json())
 
 export function useReadingToday() {
-    const { data, error, isLoading } = useSWR<ReadingTodayType>('/api/reading/today', fetcher)
+    const clientTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+    const { data, error, isLoading } = useSWR<ReadingTodayType>(`/api/reading/today?timezone=${clientTimezone}`, fetcher)
 
     return {
         readingToday: data,
