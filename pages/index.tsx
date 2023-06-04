@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
       <main
-          className={`grid grid-cols-1 gap-1 flex py-24 ${nunito.className}`}
+          className={`grid grid-cols-1 gap-1 flex py-24 min-h-screen ${nunito.className}`}
       >
         { <UserProfile />}
         { isReadingLoading ? <Loading /> : <ReadingToday readingToday={readingToday as ReadingTodayType} /> }
