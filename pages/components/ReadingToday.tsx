@@ -1,4 +1,4 @@
-import { ReadingTodayType } from "@/pages/api/reading/today";
+import { ReadingTodayType } from "@/pages/api/reading";
 
 const VERSION = "NCV";
 
@@ -17,9 +17,6 @@ export default function ReadingToday({ readingToday }: { readingToday: ReadingTo
                 TODAY&apos;S READING
             </h2>
             <p className={`text-sm opacity-70`}>
-                Timezone: {readingToday["Timezone"]}
-            </p>
-            <p className={`text-sm opacity-70`}>
                 Date: {readingToday["Date"]}
             </p>
             <p className={`text-sm opacity-70`}>
@@ -36,7 +33,7 @@ export default function ReadingToday({ readingToday }: { readingToday: ReadingTo
                rel="noopener noreferrer">
                 <svg className="animate-bounce w-6 h-6 opacity-70" fill="none" strokeLinecap="round"
                      strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
                 </svg>
             </a>
         </div>
