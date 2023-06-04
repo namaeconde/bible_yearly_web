@@ -1,9 +1,10 @@
-import { Roboto_Mono } from 'next/font/google'
+import { Nunito } from 'next/font/google'
 import { ReadingTodayType } from "@/pages/api/reading";
 import ReadingToday from "./components/ReadingToday";
 import useSWR from "swr";
+import UserProfile from "@/pages/components/UserProfile";
 
-const robotoMono = Roboto_Mono({
+const nunito = Nunito({
   weight: '400',
   subsets: ['latin'],
 });
@@ -28,21 +29,20 @@ export function useReadingToday() {
 
     return {
         readingToday: data,
-        isLoading,
+        isReadingLoading: isLoading,
         isError: error
     }
 }
 
 export default function Home() {
-  const { isLoading, readingToday } = useReadingToday()
+  const { isReadingLoading, readingToday } = useReadingToday()
 
   return (
       <main
-          className={`flex min-h-screen py-24 ${robotoMono.className}`}
+          className={`grid grid-cols-1 gap-1 flex py-24 ${nunito.className}`}
       >
-        { isLoading ? <Loading /> :
-          <ReadingToday readingToday={readingToday as ReadingTodayType} />
-        }
+        { <UserProfile />}
+        { isReadingLoading ? <Loading /> : <ReadingToday readingToday={readingToday as ReadingTodayType} /> }
       </main>
   )
 }
