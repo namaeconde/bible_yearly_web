@@ -5,7 +5,7 @@ const VERSION = "NCV";
 export default function ReadingToday({ readingToday }: { readingToday: ReadingTodayType }) {
     return (
         readingToday && <div
-            className="grid m-auto text-center place-items-center
+            className="grid m-auto text-center place-items-center py-4
             before:rounded-full before:bg-gradient-radial
             before:blur-2xl before:content-[''] after:absolute after:-z-20
             after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic
