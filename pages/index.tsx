@@ -43,7 +43,7 @@ export default function Home() {
       >
         <div className="m-auto">
             { <UserProfile />}
-            { !isReadingLoading ? <Loading /> : <ReadingToday readingToday={readingToday as ReadingTodayType} /> }
+            { isReadingLoading ? <Loading /> : <ReadingToday readingToday={readingToday as ReadingTodayType} /> }
         </div>
       </main>
   )
